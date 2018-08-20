@@ -1,0 +1,50 @@
+
+
+// NOTE :ALL THE "--->" ARE QUERIES.
+
+// Firstly , create three tables(normalised tables) namely : flightdetails(flightno  int(primarykey),airname varchar , dest varchar ,price varchar )
+										departuredetails(flightno int(foreignkey),departdetails,arrivaldetails)
+											timingdetails(flightno int(foreign key),departtime,arrivaltime)
+
+1--->Create table flightdetails(flightno int primary key ,airname varchar(20) , dest varchar(20) ,price varchar(20));
+
+2--->Create table departuredetails(flightno int(foreignkey),departdetails varchar(20),arrivaldetails varchar(20));
+
+3--->Create table timingdetails(flightno int(foreign key),departtime,arrivaltime);
+
+//similarly create other tables.
+
+
+//In the enter details section , the form.html page is submitted to the database using the following queries.
+//IN THE ONCLICKLISTNER OF THE SUBMIT BUTTON, FOLLOWING QUERIES NEED TO BE EXECUTED.
+4--->  Insert into flightdetails("flightno","airname","dest","price") values ("?","?","?","?"));
+
+5--->  Insert into departuredetails(departdetails varchar(20),arrivaldetails varchar(20)) values ("?","?","?"));
+
+6--->  Insert into timingdetails(departtime,arrivaltime) values ("?","?");
+
+// These queries can be used to insert the data inside the database tables.
+
+
+//ON THE MAIN USER INTERFACE , MAINLY TWO BUTTONS ARE THERE, "ENTER DETAILS" AND "INQUIRE DETAILS".
+
+//In "enter details" ,the anchor<a> tag automatically opens the form.html file and the form is submitted using the post request in the database.
+
+//IN "INQUIRE DETAILS" , THE UI WILL HAVE A LIST OF OPTIONS ACCORDING TO WHICH THE LIST OF FLIGHTS IS DISPLAYED.
+
+7--->SELECT * FROM FLIGHTDETAILS A,DEPARTUREDETAILS B WHERE A.DEST="?" AND B.DEPARDETAILS="?" AND B.ARRIVALDETAILS="?";
+
+8---> CREATE VIEW DETAILS_VIEW AS SELECT * FROM FLIGHTDETAILS A,DEPARTUREDETAILS B WHERE A.DEST="?" AND B.DEPARDETAILS="?" AND B.ARRIVALDETAILS="?";
+
+//ONCE FILES RETRIEVED ,USE THESE QUERIES TO FILTER.
+
+9--->SELECT * FROM DETAILS_VIEW WHERE DESTINATION="?";
+10--->SELECT * FROM DETAILS_VIEW WHERE DEPARTUREDATE="?";
+11--->SELECT * FROM DETAILS_VIEW WHERE ARRIVALDATE="?";
+
+//ACCORDING TO THE USER INPUT IN "?" , THE QUERIES WILL BE EXECUTED EFFECTIVELY.
+
+
+
+
+
